@@ -1,20 +1,21 @@
 import { createBrowserRouter } from "react-router";
 import MainLayOuts from "../layouts/MainLayOuts";
-import ErrorPage from "../Pages/ErrorPage";
-import Home from "../Pages/Home/Home";
 import Favoriute from "../Pages/Favoriute";
 import About from "../Pages/About";
 import PhonDetails from "../Pages/PhonDetails";
+import ErrorHear from "../Pages/ErrorHear";
+import Hero from "../components/Hero/Hero";
+ 
 
 const router = createBrowserRouter([
     {
       path: "/",
       Component:MainLayOuts,
-      errorElement:ErrorPage,
+     errorElement:<ErrorHear />,
       children:[
         {
             index:true,
-            Component: Home,
+            Component: Hero,
         },
         {
           path:'/favoriute',

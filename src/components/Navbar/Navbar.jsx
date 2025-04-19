@@ -1,8 +1,11 @@
 import React from 'react';
+import { IoMdCart } from "react-icons/io";
+import { MdBookmarkAdd } from "react-icons/md";
+import {  NavLink } from 'react-router';
 
 const Navbar = () => {
     return (
-        <div className="navbar p-0 bg-base-100 shadow-sm">
+        <div className="navbar p-0 bg-base-100 shadow-sm mx-auto px-8 md:px12 lg:px-16 xl:px-24">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className=" cursor-pointer btn-ghost lg:hidden">
@@ -11,38 +14,24 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
+              <li><NavLink to="/" className={({isActive})=>isActive ? 'text-green-600': ''}> Home</NavLink></li>
+            <li><NavLink to="/about" className={({isActive})=>isActive ? 'text-green-600': ''}> About</NavLink></li>
+            <li className='flex items-center justify-center'><NavLink to="/cart" className={({isActive})=>isActive ? 'text-green-600': ''}> <IoMdCart size={20} /></NavLink></li>
+            <li className='flex items-center justify-center'><NavLink to="/favoriute" className={({isActive})=>isActive ? 'text-green-600': ''}>  <MdBookmarkAdd  size={20} /> </NavLink></li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <NavLink to='/' className="btn btn-ghost text-xl">daisyUI</NavLink>
         </div>
-        <div className="navbar-end hidden lg:flex">
+        <div className="navbar-end">
 
         <div className="navbar-center ">
-          <ul className="menu menu-horizontal px-1">
-            <li><a>Item 1</a></li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </details>
-            </li>
-            <li><a>Item 3</a></li>
+          <ul className="menu menu-horizontal px-1">   
+            <li><NavLink to="/" className={({isActive})=>isActive ? 'text-green-600': ''}> Home</NavLink></li>
+            <li><NavLink to="/about" className={({isActive})=>isActive ? 'text-green-600': ''}> About</NavLink></li>
+            <li className='flex items-center justify-center'><NavLink to="/cart" className={({isActive})=>isActive ? 'text-green-600': ''}> <IoMdCart size={20} /></NavLink></li>
+            <li className='flex items-center justify-center'><NavLink to="/favoriute" className={({isActive})=>isActive ? 'text-green-600': ''}>  <MdBookmarkAdd  size={20} /> </NavLink></li>
           </ul>
         </div>
-
-          <a className="btn">Button</a>
         </div>
       </div>
     );
