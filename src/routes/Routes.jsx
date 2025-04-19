@@ -4,7 +4,9 @@ import Favoriute from "../Pages/Favoriute";
 import About from "../Pages/About";
 import PhonDetails from "../Pages/PhonDetails";
 import ErrorHear from "../Pages/ErrorHear";
-import Hero from "../components/Hero/Hero";
+import Home from "../Pages/Home/Home";
+ 
+ 
  
 
 const router = createBrowserRouter([
@@ -14,8 +16,10 @@ const router = createBrowserRouter([
      errorElement:<ErrorHear />,
       children:[
         {
-            index:true,
-            Component: Hero,
+            // index:true,
+            path:'/',
+            Component:Home ,
+            loader:()=>fetch('phones.json'),
         },
         {
           path:'/favoriute',
