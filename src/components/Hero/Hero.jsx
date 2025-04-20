@@ -10,7 +10,10 @@ const Hero = ({handleSearch}) => {
             <h1 className='font-thin text-7xl text-gray-900'>Browse, Search, view, buy</h1>
           </div>
           <form
-          onSubmit={e=>handleSearch(e,search)}
+          onSubmit={e=> {
+            handleSearch(e,search);
+            setSearch(' ')
+          }}
           className='flex md:flex-row flex-col justify-center items-center pt-6'>
             <input
             type='text'
