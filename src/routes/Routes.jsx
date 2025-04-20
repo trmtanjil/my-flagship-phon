@@ -19,6 +19,7 @@ const router = createBrowserRouter([
             // index:true,
             path:'/',
             Component:Home ,
+            hydrateFallbackElement:<p>Loading, please wait....</p>,
             loader:()=>fetch('phones.json'),
         },
         {
